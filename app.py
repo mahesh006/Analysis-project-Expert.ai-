@@ -317,3 +317,24 @@ def Compareappstore():
     entries=database.retrieve_entries_playstore()
     return render_template("competative_playstore.html", data=json.dumps(entries),positive=json.dumps(len(positive)), negative=json.dumps(len(negative)), neutral=json.dumps(len(neutral)), neg=neg, reviews=review, entries=entries)
 
+
+@app.route("/feedback", methods=["GET", "POST"])
+def feedback():
+    if request.method == "POST":
+          entry_contents = request.form.get("contents")
+          output = client.specific_resource_analysis(body={"document": {"text": entry_contents}},params={'language': language, 'resource': 'sentiment'})
+          
+          database.create_entrys_chat(entry_contents, output.sentiment.overall)
+          print(output.sentiment.overall)
+
+    return render_template("feedback.html")
+
+
+@app.route('/negative', methods=["GET", "POST"])
+def negative():
+    return render_template("negative.html", entries=database.retrieve_entrie_chat())
+
+
+@app.route('/positive', methods=["GET", "POST"])
+def positive():
+    return render_template("positive.html", entries=database.retrieve_entrie_chat())
