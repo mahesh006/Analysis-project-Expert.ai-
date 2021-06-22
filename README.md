@@ -12,3 +12,18 @@ Competitive analysis: we build tools to allow the small business to compare and 
 # Instructions
 
 for demo purpose we are using 10 reviews from each platform.
+
+Add your details in app.py
+
+Expert.ai api details:
+
+os.environ["EAI_USERNAME"] = ''
+os.environ["EAI_PASSWORD"] = ''
+
+Twitter api details:
+
+access_token = ""
+access_token_secret = ""
+
+api_key = ""
+api_key_secret = ""
