@@ -13,14 +13,14 @@ import database
 
 
 
-os.environ["EAI_USERNAME"] = 'pitabi1360@pashter.com'
-os.environ["EAI_PASSWORD"] = 'Testqwerty1!'
+os.environ["EAI_USERNAME"] = ''
+os.environ["EAI_PASSWORD"] = ''
 
-access_token = "1407309279078408197-EsY7HEDOzrzXXrsHPs24hPASTggoCm"
-access_token_secret = "mFn0eVgcuZxe0DT4ZhheRSnp5qhROSt5nTxABpVSpXekp"
+access_token = ""
+access_token_secret = ""
 
-api_key = "odeTSoIEnjZISbX2ey7wsHt1j"
-api_key_secret = "PEA8yJXrKY0Mo0L8p2zSeSsesNuui42zoRIhq8nMZbo5kbGxYK"
+api_key = ""
+api_key_secret = ""
 
 from expertai.nlapi.cloud.client import ExpertAiClient
 client = ExpertAiClient()
