@@ -51,6 +51,12 @@ def home():
     comnam=[]   
         
     if request.method == "POST":
+        negative.clear()
+        positive.clear()
+        neutral.clear()
+        review.clear()
+        neg.clear()
+        comnam.clear()
         database.delete_entries()
         entry_content = request.form.get("content")
         r = requests.get(entry_content)
@@ -90,7 +96,11 @@ def AmazonReviews():
     neg=[]    
         
     if request.method == "POST":
-
+        negative.clear()
+        positive.clear()
+        neutral.clear()
+        review.clear()
+        neg.clear()
         entry_content = request.form.get("content")
         r = requests.get(entry_content)
         soup = BeautifulSoup(r.text, 'html.parser')
@@ -131,6 +141,17 @@ def AppStoreReviews():
     ratings=[]
         
     if request.method == "POST":
+        negative.clear()
+        positive.clear()
+        neutral.clear()
+        review.clear()
+        neg.clear()
+        data.clear()
+        applinkedd.clear()
+        dates.clear()
+        sorteddates.clear()
+        clear.clear()
+        ratings.clear()
         database.delete_entries_playstore()
         entry_content = request.form.get("content")       
         applink=entry_content
@@ -191,6 +212,11 @@ def Yelp():
     neutral=[]
     
     if request.method == "POST":
+        negative.clear()
+        positive.clear()
+        neutral.clear()
+        tweet.clear()
+        sentiment.clear()
         entry_content = request.form.get("content")
         tweets = tweepy.Cursor(api.search,q=entry_content).items(10)
 
@@ -219,6 +245,11 @@ def Compare():
     
     
     if request.method == "POST":
+        negative.clear()
+        positive.clear()
+        neutral.clear()
+        review.clear()
+        neg.clear()
         entry_content = request.form.get("content")
         r = requests.get(entry_content)
         soup = BeautifulSoup(r.text, 'html.parser')
@@ -252,6 +283,12 @@ def Compareappstore():
     
     
     if request.method == "POST":
+        negative.clear()
+        positive.clear()
+        neutral.clear()
+        review.clear()
+        reviews.clear()
+        neg.clear()
         entry_content = request.form.get("content")       
         applink=entry_content
         applinks=entry_content
