@@ -64,3 +64,32 @@ def delete_entries_playstore():
         cursor = connection.cursor()
         cursor.execute(sql_STORE)
         connection.commit()
+        
+        
+ 
+
+CREATE_TABLE_CHAT = '''CREATE TABLE IF NOT EXISTS chat
+                    (content TEXT, analysis TEXT)'''
+
+
+CREATE_ENTRY_CHAT = "INSERT INTO chat VALUES (?, ?)"
+RETRIEVE_ENTRIES_CHAT = "SELECT * FROM chat"
+
+
+def create_table_chat():
+    with sqlite3.connect("data.db") as connection:
+        connection.execute(CREATE_TABLE_CHAT)
+
+
+def create_entrys_chat(content,analysis):
+    with sqlite3.connect("data.db") as connection:
+        connection.execute(CREATE_ENTRY_CHAT, (content,analysis))
+
+
+def retrieve_entrie_chat():
+    with sqlite3.connect("data.db") as connection:
+        cursor = connection.cursor()
+        cursor.execute(RETRIEVE_ENTRIES_CHAT)
+        return cursor.fetchall()
+
+       
