@@ -17,8 +17,8 @@ Add your details in app.py
 
 Expert.ai api details:
 
-os.environ["EAI_USERNAME"] = ''
-os.environ["EAI_PASSWORD"] = ''
+os.environ["EAI_USERNAME"] = ""
+os.environ["EAI_PASSWORD"] = ""
 
 Twitter api details:
 
