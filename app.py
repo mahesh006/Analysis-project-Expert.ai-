@@ -42,6 +42,11 @@ api=tweepy.API(auth)
 
 language= 'en'
 
+@app.route("/home", methods=["GET", "POST"])
+def House():   
+    return render_template("home.html")
+
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
