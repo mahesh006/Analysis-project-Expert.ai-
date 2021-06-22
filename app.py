@@ -32,6 +32,8 @@ database.create_tables()
 
 database.create_tables_playstore()
 
+database.create_table_chat()
+
 auth = tweepy.OAuthHandler(consumer_key=api_key,consumer_secret=api_key_secret)
 auth.set_access_token(access_token,access_token_secret)
 api=tweepy.API(auth)
